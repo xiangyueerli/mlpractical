@@ -295,8 +295,12 @@ class EMNISTDataProvider(DataProvider):
         (num_data, num_classes)
 
         """
+        num_data = int_targets.shape[0]
+
+        smoothed_labels = np.full((num_data, self.num_classes), alpha / (self.num_classes - 1))
+        smoothed_labels[range(num_data), int_targets] = 1 - alpha
         
-        raise NotImplementedError
+        return smoothed_labels
   
     
 
