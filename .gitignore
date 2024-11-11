@@ -1,6 +1,6 @@
-
 #dropbox stuff
 *.dropbox*
+.idea/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -26,7 +26,7 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-etc/
+*.tar.gz
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -64,14 +64,23 @@ target/
 # Pycharm
 .idea/*
 
-# Notebook stuff
+#Notebook stuff
 notebooks/.ipynb_checkpoints/
 
-# Data folder
+#Google Cloud stuff
+/google-cloud-sdk
+.ipynb_checkpoints/
+data/cifar-100-python/
+data/MNIST/
 solutions/
-
-# Latex stuff
 report/mlp-cw1-template.aux
 report/mlp-cw1-template.out
 report/mlp-cw1-template.pdf
 report/mlp-cw1-template.synctex.gz
+.DS_Store
+report/mlp-cw2-template.aux
+report/mlp-cw2-template.out
+report/mlp-cw2-template.pdf
+report/mlp-cw2-template.synctex.gz
+report/mlp-cw2-template.bbl
+report/mlp-cw2-template.blg
