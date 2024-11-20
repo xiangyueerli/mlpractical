@@ -149,8 +149,11 @@ class ExperimentBuilder(nn.Module):
         Complete the code in the block below to collect absolute mean of the gradients for each layer in all_grads with the             layer names in layers.
         """
         ########################################
-        #TODO write your code here
-        
+        # Collecting the absolute mean of gradients for each layer
+        for name, param in named_parameters:
+            if param.requires_grad and param.grad is not None:  # Ensure gradients exist
+                layers.append(name)  # Append layer name
+                all_grads.append(param.grad.abs().mean().item())  # Append the mean of absolute gradients
         ########################################
             
         
