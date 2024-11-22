@@ -152,7 +152,12 @@ class ExperimentBuilder(nn.Module):
         # Collecting the absolute mean of gradients for each layer
         for name, param in named_parameters:
             if param.requires_grad and param.grad is not None:  # Ensure gradients exist
-                layers.append(name)  # Append layer name
+                if name[-4:] == 'bias':
+                    continue
+                layer_list = [n for n in name.split('.') if n not in ['layer_dict', 'weight']]
+                if layer_list[0][:5] == 'logit':
+                    layer_list = ['weight'] + layer_list
+                layers.append('_'.join(layer_list))
                 all_grads.append(param.grad.abs().mean().item())  # Append the mean of absolute gradients
         ########################################
             
