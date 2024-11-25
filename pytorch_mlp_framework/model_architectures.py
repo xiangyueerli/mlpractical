@@ -600,7 +600,7 @@ class ConvolutionalProcessingBlock_br(nn.Module):
 
         return out
 
-# # test BN
+# # test BN+Res
 # def testConvolutionalProcessingBlock_br():
 #     block = ConvolutionalProcessingBlock_br(input_shape=(4, 32, 32, 32), num_filters=32, kernel_size=3, padding=1, bias=True, dilation=1)
 #     x = torch.randn(4, 32, 32, 32)

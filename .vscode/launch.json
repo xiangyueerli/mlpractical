@@ -1,0 +1,77 @@
+{
+    // 使用 IntelliSense 了解相关属性。 
+    // 悬停以查看现有属性的描述。
+    // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python: Train with Args",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/ycy/mlpractical/pytorch_mlp_framework/train_evaluate_image_classification_system.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--batch_size", "100",
+                "--seed", "0",
+                "--num_filters", "32",
+                "--num_stages", "3",
+                "--num_blocks_per_stage", "0",
+                "--experiment_name", "VGG_08_experiment",
+                "--use_gpu", "True",
+                "--num_classes", "100",
+                "--block_type", "conv_block",
+                "--continue_from_epoch", "-1"
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "pythonPath": "/opt/conda/bin/python"
+        },
+        {
+            "name": "Python: Train with Args (VGG_38_experiment)",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/ycy/mlpractical/pytorch_mlp_framework/train_evaluate_image_classification_system.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--batch_size", "100",
+                "--seed", "0",
+                "--num_filters", "32",
+                "--num_stages", "3",
+                "--num_blocks_per_stage", "5",
+                "--experiment_name", "VGG_38_experiment",
+                "--use_gpu", "True",
+                "--num_classes", "100",
+                "--block_type", "conv_block",
+                "--continue_from_epoch", "-1"
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "pythonPath": "/opt/conda/bin/python"
+        },
+        {
+            "name": "Python: Train with Args (VGG_38_b)",
+            "type": "python",
+            "request": "launch",
+            "program": "/home/ycy/mlpractical/pytorch_mlp_framework/train_evaluate_image_classification_system.py",
+            "console": "integratedTerminal",
+            "args": [
+                "--batch_size", "100",
+                "--seed", "0",
+                "--num_filters", "32",
+                "--num_stages", "3",
+                "--num_blocks_per_stage", "5",
+                "--experiment_name", "VGG_38_b",
+                "--use_gpu", "True",
+                "--num_classes", "100",
+                "--block_type", "b_block",
+                "--continue_from_epoch", "-1"
+            ],
+            "env": {
+                "PYTHONUNBUFFERED": "1"
+            },
+            "pythonPath": "/opt/conda/bin/python"
+        }
+    ]
+}
