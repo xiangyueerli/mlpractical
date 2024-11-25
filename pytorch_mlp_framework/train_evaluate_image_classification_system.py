@@ -47,6 +47,15 @@ if args.block_type == 'conv_block':
 elif args.block_type == 'empty_block':
     processing_block_type = EmptyBlock
     dim_reduction_block_type = EmptyBlock
+elif args.block_type == 'b_block':
+    processing_block_type = ConvolutionalProcessingBlock_b
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock_b
+elif args.block_type == 'r_block':
+    processing_block_type = ConvolutionalProcessingBlock_r
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock
+elif args.block_type == 'br_block':
+    processing_block_type = ConvolutionalProcessingBlock_br
+    dim_reduction_block_type = ConvolutionalDimensionalityReductionBlock_b
 else:
     raise ModuleNotFoundError
 
@@ -60,6 +69,7 @@ custom_conv_net = ConvolutionalNetwork(  # initialize our network object, in thi
 conv_experiment = ExperimentBuilder(network_model=custom_conv_net,
                                     experiment_name=args.experiment_name,
                                     num_epochs=args.num_epochs,
+                                    lr=args.lr,
                                     weight_decay_coefficient=args.weight_decay_coefficient,
                                     use_gpu=args.use_gpu,
                                     continue_from_epoch=args.continue_from_epoch,
